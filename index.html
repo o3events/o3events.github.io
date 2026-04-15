@@ -66,89 +66,40 @@
       animation: fadeUp 1s ease both;
     }
 
-    /* LOGO PLACEHOLDER */
+    /* LOGO */
     .logo-wrapper {
       position: relative;
-    }
-
-    .logo-box {
-      width: 96px;
-      height: 96px;
-      border: 1px solid var(--border);
-      background: var(--surface);
+      width: 180px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
       animation: fadeUp 1s 0.1s ease both;
     }
 
-    /* Corner accents */
-    .logo-box::before,
-    .logo-box::after {
+    .logo-wrapper::before,
+    .logo-wrapper::after {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 16px;
+      height: 16px;
       border-color: var(--accent-dim);
       border-style: solid;
     }
-    .logo-box::before {
+    .logo-wrapper::before {
       top: -1px; left: -1px;
       border-width: 1px 0 0 1px;
     }
-    .logo-box::after {
+    .logo-wrapper::after {
       bottom: -1px; right: -1px;
       border-width: 0 1px 1px 0;
     }
 
-    /* Shimmer sweep */
-    .logo-box .shimmer {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg, transparent 40%, rgba(232,224,200,0.06) 50%, transparent 60%);
-      animation: shimmer 3s 1.5s ease-in-out infinite;
-    }
-
-    .logo-label {
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    /* Replace .logo-img with your <img> tag */
     .logo-img {
-      width: 56px;
-      height: 56px;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      /* placeholder cross */
-      background: none;
-    }
-
-    /* placeholder cross shown only when no real img is inside */
-    .logo-placeholder {
-      width: 56px;
-      height: 56px;
-      position: relative;
-      opacity: 0.18;
-    }
-    .logo-placeholder::before,
-    .logo-placeholder::after {
-      content: '';
-      position: absolute;
-      background: var(--accent);
-    }
-    .logo-placeholder::before {
-      width: 1px; height: 100%;
-      left: 50%; top: 0; transform: translateX(-50%);
-    }
-    .logo-placeholder::after {
-      height: 1px; width: 100%;
-      top: 50%; left: 0; transform: translateY(-50%);
+      display: block;
     }
 
     /* HEADING */
@@ -273,10 +224,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes shimmer {
-      0%   { transform: translateX(-100%); }
-      100% { transform: translateX(200%); }
-    }
 
     @keyframes pulse {
       0%, 100% { opacity: 0.4; transform: scale(1); }
@@ -288,13 +235,8 @@
 
   <div class="container">
 
-    <!-- LOGO: replace <div class="logo-placeholder"></div> with <img class="logo-img" src="your-logo.png" alt="Logo"> -->
     <div class="logo-wrapper">
-      <div class="logo-box">
-        <div class="shimmer"></div>
-        <div class="logo-placeholder"></div>
-        <img class="logo-img" src="logo.png" alt="Logo">
-      </div>
+      <img class="logo-img" src="logo.png" alt="Logo" />
     </div>
 
     <div class="heading">
